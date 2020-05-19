@@ -1,0 +1,114 @@
+package pageobject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import factory.WebDriverFactory;
+
+public class PraticeSitePageObject extends PageObject{
+	
+	//Store
+	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]")
+	public static WebElement btnBookRubySelenium;
+
+	@FindBy(xpath = "//*[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[3]")
+	public static WebElement btnViewBasket;
+	
+	//Basket
+	@FindBy(xpath = "//*[@id='page-34']/div/div[1]/div/div/div/a")
+	public static WebElement btnCheckout;
+	
+	//Checkout
+	@FindBy(id = "billing_first_name")
+	public static WebElement detailFirstName;
+
+	@FindBy(id = "billing_last_name_field")
+	public static WebElement detailLastName;
+
+	@FindBy(id = "billing_company")
+	public static WebElement detailCompany;
+
+	@FindBy(id = "billing_email")
+	public static WebElement detailEmail;
+	
+	@FindBy(id = "billing_phone")
+	public static WebElement detailPhone;
+
+	@FindBy(id = "s2id_autogen1_search")
+	public static WebElement detailTxtCountry;
+
+	@FindBy(id = "billing_address_1")
+	public static WebElement detailAdress_1;
+
+	@FindBy(id = "billing_address_2")
+	public static WebElement detailAdress_2;
+	
+	@FindBy(id = "billing_city")
+	public static WebElement detailCity;
+	
+	@FindBy(id = "billing_postcode")
+	public static WebElement detailZipCode;
+
+	@FindBy(id = "place_order")
+	public static WebElement btnPlaceOrder;
+
+	@FindBy(xpath = "")
+	public static WebElement g4;
+	
+	@FindBy(xpath = "")
+	public static WebElement g6;
+	
+	@FindBy(xpath = "")
+	public static WebElement f7;
+
+	@FindBy(xpath = "")
+	public static WebElement g7;
+	
+	@FindBy(xpath = "")
+	public static WebElement f8;
+
+	@FindBy(xpath = "")
+	public static WebElement g8;
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverFactory.openChrome();
+		WebDriver driver = WebDriverFactory.getDriver();
+		driver.get("http://practice.automationtesting.in");
+		Thread.sleep(3000);
+		
+		
+		WebElement x1 = driver.findElement(By.xpath("//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li"));
+		System.out.println("achou01:"+x1.isDisplayed());
+		WebElement x2 = driver.findElement(By.xpath("//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]"));
+		System.out.println("achou02:"+x2.isDisplayed());
+		WebElement x3 = driver.findElement(By.xpath("//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]"));
+		x3.click();
+		System.out.println("achou03:"+x3.isDisplayed());
+		
+		
+		System.out.println("Abriu");
+		System.out.println("Veja:"+btnBookRubySelenium.isDisplayed());
+		btnBookRubySelenium.click();
+		System.out.println("escolheu livro");
+		Thread.sleep(500);
+		btnViewBasket.click();
+		System.out.println("vai pagar");
+		Thread.sleep(1000);
+
+		detailFirstName.sendKeys("Marco");
+		System.out.println("nome");
+		detailLastName.sendKeys("Bettoni");
+		System.out.println("sobrenome");
+		detailCompany.sendKeys("Yaman");
+		System.out.println("empresa");
+		detailEmail.sendKeys("marco@email.com");
+		System.out.println("email");
+		detailPhone.sendKeys("0204060800");
+		System.out.println("telefone");
+		
+	}
+
+}

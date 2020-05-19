@@ -1,0 +1,25 @@
+package pageobject;
+
+import java.util.List;
+
+import org.openqa.selenium.FindBy;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import factory.WebDriverFactory;
+
+public class PraticeSitePageObject extends PageObject{
+	
+	@FindBy(xpath = "//*[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]")
+	private WebElement 
+	
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverFactory.openChrome();
+		WebDriver driver = WebDriverFactory.getDriver();
+		driver.get("http://demo.automationtesting.in/WebTable.html");
+		Thread.sleep(3000);
+		
+		
+	}
+
+}

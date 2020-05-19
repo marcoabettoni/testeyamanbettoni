@@ -1,0 +1,21 @@
+package pageobject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import factory.WebDriverFactory;
+
+public class PageObject {
+	
+	public WebDriver driver;
+	
+	public PageObject() {
+		this.driver = WebDriverFactory.getDriver();
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void openUrl(String url) {
+		driver.get(url);
+	}
+	
+}

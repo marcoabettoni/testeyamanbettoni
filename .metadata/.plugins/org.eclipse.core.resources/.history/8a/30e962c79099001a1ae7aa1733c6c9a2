@@ -1,0 +1,97 @@
+package pageobject;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
+public class PraticeSitePageObject extends PageObject{
+	
+	//Store
+	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]")
+	public WebElement btnBookRubySelenium;
+
+	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[3]")
+	public WebElement btnViewBasket;
+	
+	//Basket
+	@FindBy(xpath = "//*[@id='page-34']/div/div[1]/div/div/div/a")
+	public WebElement btnCheckout;
+	
+	//Checkout
+	@FindBy(id = "billing_first_name")
+	public WebElement detailFirstName;
+
+	@FindBy(id = "billing_last_name_field")
+	public WebElement detailLastName;
+
+	@FindBy(id = "billing_company")
+	public WebElement detailCompany;
+
+	@FindBy(id = "billing_email")
+	public WebElement detailEmail;
+	
+	@FindBy(id = "billing_phone")
+	public WebElement detailPhone;
+
+	@FindBy(id = "s2id_autogen1_search")
+	public WebElement detailTxtCountry;
+
+	@FindBy(id = "billing_address_1")
+	public WebElement detailAdress_1;
+
+	@FindBy(id = "billing_address_2")
+	public WebElement detailAdress_2;
+	
+	@FindBy(id = "billing_city")
+	public WebElement detailCity;
+	
+	@FindBy(id = "billing_postcode")
+	public WebElement detailZipCode;
+
+	@FindBy(id = "place_order")
+	public WebElement btnPlaceOrder;
+
+	@FindBy(xpath = "")
+	public WebElement g4;
+	
+	@FindBy(xpath = "")
+	public WebElement g6;
+	
+	@FindBy(xpath = "")
+	public WebElement f7;
+
+	@FindBy(xpath = "")
+	public WebElement g7;
+	
+	@FindBy(xpath = "")
+	public WebElement f8;
+
+	@FindBy(xpath = "")
+	public WebElement g8;
+	
+	
+	public void SelectBook() throws InterruptedException {
+		System.out.println("Abriu");
+		btnBookRubySelenium.click();
+		System.out.println("escolheu livro");
+		Thread.sleep(1500);
+		btnViewBasket.click();
+		System.out.println("vai pagar");
+		Thread.sleep(1000);
+		btnCheckout.click();
+		Thread.sleep(1000);
+
+		detailFirstName.sendKeys("Marco");
+		System.out.println("nome");
+		detailLastName.sendKeys("Bettoni");
+		System.out.println("sobrenome");
+		detailCompany.sendKeys("Yaman");
+		System.out.println("empresa");
+		detailEmail.sendKeys("marco@email.com");
+		System.out.println("email");
+		detailPhone.sendKeys("0204060800");
+		System.out.println("telefone");
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+#Author: Marco Antonio Bettoni Junior
+Feature: Automation Test
+
+  Scenario: Test Navigation
+    Given I open url "http://demo.automationtesting.in/"
+    And write a email "marco_automatiotest@email.com"
+    When I register my personal data
+    And exclude an old registy
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes

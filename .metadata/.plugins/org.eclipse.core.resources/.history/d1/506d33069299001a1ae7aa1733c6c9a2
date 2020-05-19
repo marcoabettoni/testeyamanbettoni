@@ -1,0 +1,84 @@
+package pageobject;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
+public class PraticeSitePageObject extends PageObject{
+	
+	//Store
+	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]")
+	private WebElement btnBookRubySelenium;
+
+	@FindBy(xpath = "//div[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[3]")
+	private WebElement btnViewBasket;
+	
+	//Basket
+	@FindBy(xpath = "//*[@id='page-34']/div/div[1]/div/div/div/a")
+	private WebElement btnCheckout;
+	
+	//Checkout
+	@FindBy(id = "billing_first_name")
+	private WebElement detailFirstName;
+
+	@FindBy(id = "billing_last_name")
+	private WebElement detailLastName;
+
+	@FindBy(id = "billing_company")
+	private WebElement detailCompany;
+
+	@FindBy(id = "billing_email")
+	private WebElement detailEmail;
+	
+	@FindBy(id = "billing_phone")
+	private WebElement detailPhone;
+
+	@FindBy(id = "s2id_autogen1_search")
+	private WebElement detailTxtCountry;
+
+	@FindBy(id = "billing_address_1")
+	private WebElement detailAdress_1;
+
+	@FindBy(id = "billing_address_2")
+	private WebElement detailAdress_2;
+	
+	@FindBy(id = "billing_city")
+	private WebElement detailCity;
+	
+	@FindBy(id = "billing_postcode")
+	private WebElement detailZipCode;
+
+	@FindBy(id = "place_order")
+	private WebElement btnPlaceOrder;
+
+	@FindBy(xpath = "")
+	private WebElement g4;
+	
+	@FindBy(xpath = "")
+	private WebElement g6;
+	
+	
+	
+	public void SelectBook() throws InterruptedException {
+		btnBookRubySelenium.click();
+		Thread.sleep(1500);
+		btnViewBasket.click();
+		Thread.sleep(1000);
+		btnCheckout.click();
+		Thread.sleep(1000);
+
+		detailFirstName.sendKeys("Marco");
+		detailLastName.sendKeys("Bettoni");
+		detailCompany.sendKeys("Yaman");
+		detailEmail.sendKeys("marco@email.com");
+		detailPhone.sendKeys("0204060800");
+		System.out.println("telefone");
+		
+		detailAdress_1.sendKeys("São Bernardo do Campo");
+		System.out.println("cidade");
+		detailAdress_2.sendKeys("house");
+		System.out.println("casa");
+		
+	}
+
+}

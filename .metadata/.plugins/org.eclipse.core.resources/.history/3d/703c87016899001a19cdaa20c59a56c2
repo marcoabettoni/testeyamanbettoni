@@ -1,0 +1,22 @@
+package pageobject;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import factory.WebDriverFactory;
+
+public class PraticeSitePageObject extends PageObject{
+	
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverFactory.openChrome();
+		WebDriver driver = WebDriverFactory.getDriver();
+		driver.get("http://demo.automationtesting.in/WebTable.html");
+		Thread.sleep(3000);
+		
+	}
+
+}

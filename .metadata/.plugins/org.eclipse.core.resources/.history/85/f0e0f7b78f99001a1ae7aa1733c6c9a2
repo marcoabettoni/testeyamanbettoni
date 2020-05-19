@@ -1,0 +1,13 @@
+package factory;
+
+import org.openqa.selenium.WebDriver;
+
+public class Study {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverFactory.openChrome();
+		WebDriver driver = WebDriverFactory.getDriver();
+		driver.get("http://practice.automationtesting.in");
+		Thread.sleep(3000);
+	}
+}

@@ -1,0 +1,88 @@
+package pageobject;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+import factory.WebDriverFactory;
+
+public class PraticeSitePageObject extends PageObject{
+	
+	//Store
+	@FindBy(xpath = "//*[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[2]")
+	public static WebElement btnBookRubySelenium;
+
+	@FindBy(xpath = "//*[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[3]")
+	public static WebElement btnViewBasket;
+	
+	//Basket
+	@FindBy(xpath = "")
+	public static WebElement btnCheckout;
+	
+	//Checkout
+	@FindBy(xpath = "")
+	public static WebElement f2;
+
+	@FindBy(xpath = "")
+	public static WebElement g2;
+
+	@FindBy(xpath = "")
+	public static WebElement f3;
+
+	@FindBy(xpath = "")
+	public static WebElement g3;
+	
+	@FindBy(xpath = "")
+	public static WebElement f4;
+
+	@FindBy(xpath = "")
+	public static WebElement g4;
+	
+	@FindBy(xpath = "")
+	public static WebElement f5;
+
+	@FindBy(xpath = "")
+	public static WebElement g5;
+	
+	@FindBy(xpath = "")
+	public static WebElement f6;
+	
+	@FindBy(xpath = "")
+	public static WebElement f34;
+
+	@FindBy(xpath = "")
+	public static WebElement g34;
+
+	@FindBy(xpath = "")
+	public static WebElement g6;
+	
+	@FindBy(xpath = "")
+	public static WebElement f7;
+
+	@FindBy(xpath = "")
+	public static WebElement g7;
+	
+	@FindBy(xpath = "")
+	public static WebElement f8;
+
+	@FindBy(xpath = "")
+	public static WebElement g8;
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverFactory.openChrome();
+		WebDriver driver = WebDriverFactory.getDriver();
+		driver.get("http://demo.automationtesting.in/WebTable.html");
+		Thread.sleep(3000);
+		
+		btnBookRubySelenium.click();
+		Thread.sleep(500);
+		btnViewBasket.click();
+		Thread.sleep(1000);
+		
+	}
+
+}

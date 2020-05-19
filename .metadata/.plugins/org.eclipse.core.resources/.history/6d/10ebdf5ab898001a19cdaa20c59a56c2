@@ -1,0 +1,11 @@
+#Author: Marco Antonio Bettoni Junior
+Feature: Automation Test
+
+  Scenario: Test Navigation
+    Given I open url "http://demo.automationtesting.in/"
+    And write a email "marco_automatiotest@email.com"
+    When I register my personal data
+    And delete an old record
+    And select a "Ruby book" in menu "Pratice Site"
+    And create my resgistration
+    Then I validate if the book was buying
